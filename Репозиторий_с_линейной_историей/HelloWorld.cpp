@@ -1,16 +1,23 @@
 #include <iostream>
 
-int fib(int n) {
-    if (n == 1) return 0;
-    if (n == 2) return 1;
-    return fib(n-1) + fib(n-2);
+void fib(int n) {
+    int a1 = 0;
+    std::cout << a1 << std::endl;
+
+    int a2 = 1;
+    std::cout << a2 << std::endl;
+    for (int i = 3; i <= n; ++i) {
+        std::cout << a1 + a2 << std::endl;
+        std::swap(a1, a2);
+        a2 = a1 + a2;
+    }
 }
 
 int main() {
     int n;
     std::cin >> n;
 
-    std::cout << "Число Фибоначчи для n = " << n << ": " << fib(n) << std::endl;
+    fib(n);
 
     std::cout << "Hello, World!" << std::endl;
 
